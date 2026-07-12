@@ -21,7 +21,6 @@ body {
   margin-bottom: 60px;
 }
 
-/*œ¿À»“–¿  */
 :root {
     --turquoise: #14B8A6;
     --turquoise-dark: #0F766E;
@@ -29,6 +28,7 @@ body {
     --text-dark: #1E293B;
     --bg-light: #F8FAFC;
     --white: #FFFFFF;
+    --text-muted: #64748B;
 }
 
 .hero {
@@ -115,4 +115,56 @@ body {
     background-size: 100% 100%;
     z-index:2;
     pointer-events: none;
+}
+
+
+.services{
+    padding: 80px 20px;
+
+}
+
+.services__title {
+    color: var(--text-dark);
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 48px;
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.service-card {
+    text-align: center;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(30, 41, 59, 0.2);
+    transition: 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(30, 41, 59, 0.4);
+}
+
+.service-card__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.service-card__title {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.service-card__text{
+    color: var(--text-muted);
+    line-height: 1.6;
+
 }
