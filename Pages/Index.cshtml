@@ -1,10 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Клининг в Казани";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero">
+    <div class="hero__overlay"></div>
+
+    <div class="hero__bubbles" id="bubbleField"></div>
+    <div class="hero__foam"></div>
+
+
+    <div class="hero__content">
+        <h1 class="hero__title">Откройте для себя простую чистоту в Казани</h1>
+        <p class="hero__subtitle">Профессиональная уборка квартир, офисов и помещений после ремонта</p>
+        <a href="#contact" class="btn-primary">Оставить заявку</a>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/bubbles.js"></script>
+}
