@@ -72,7 +72,15 @@
     </div>
 </section>
 
-
+<section class="contact" id="contact">
+    <h2 class="contact__title">Оставьте заявку</h2>
+    <p class="contact__subtitle">Перезвоним в течение 15 минут, ответим на вопросы и рассчитаем стоимость</p>
+    <form method="post" class="contact__form">
+        <input asp-for="Request.Name" class="contact__input" placeholder="Ваше имя" />
+        <input asp-for="Request.Phone" class="contact__input" placeholder="Телефон" />
+        <button type="submit" class="btn-primary">Отправить</button>
+    </form>
+</section>
 
 @section Scripts {
     <script src="~/js/bubbles.js"></script>
