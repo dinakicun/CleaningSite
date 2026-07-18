@@ -21,6 +21,10 @@ body {
   margin-bottom: 60px;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 :root {
     --turquoise: #14B8A6;
     --turquoise-dark: #0F766E;
@@ -226,4 +230,75 @@ body {
 
 .stat-item__number::after {
     content: '+';
+}
+
+
+.contact {
+    background: var(--text-dark);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact__title {
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.contact__subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.contact__form {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    background: var(--white);
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+    .contact__input:focus {
+        outline: none;
+        border-color: var(--turquoise);
+    }
+
+    .contact__input.input-validation-error {
+        border-color: #EF4444;
+    }
+
+.contact__error {
+    color: #F87171;
+    font-size: 0.875rem;
+    text-align: left;
+    margin-top: -8px;
+}
+
+.contact__success {
+    color: var(--white);
+    background: var(--turquoise-dark);
+    padding: 32px;
+    border-radius: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.contact .btn-primary {
+    margin-top: 8px;
+    align-self: center;
 }
