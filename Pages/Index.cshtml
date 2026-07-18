@@ -4,6 +4,8 @@
     ViewData["Title"] = "Клининг в Казани";
 }
 
+
+
 <section class="hero">
     <div class="hero__overlay"></div>
 
@@ -72,12 +74,21 @@
     </div>
 </section>
 
+@if (TempData["Success"] != null)
+{
+    <div class="contact__success">
+        Спасибо! Мы приняли вашу заявку и перезвоним в ближайшее время.
+    </div>
+}
+
 <section class="contact" id="contact">
     <h2 class="contact__title">Оставьте заявку</h2>
     <p class="contact__subtitle">Перезвоним в течение 15 минут, ответим на вопросы и рассчитаем стоимость</p>
     <form method="post" class="contact__form">
-        <input asp-for="Request.Name" class="contact__input" placeholder="Ваше имя" />
-        <input asp-for="Request.Phone" class="contact__input" placeholder="Телефон" />
+        <input asp-for="Input.Name" class="contact__input" placeholder="Ваше имя" />
+        <span asp-validation-for="Input.Name" class="contact__error"></span>
+        <input asp-for="Input.Phone" class="contact__input" placeholder="Телефон" />
+        <span asp-validation-for="Input.Phone" class="contact__error"></span>
         <button type="submit" class="btn-primary">Отправить</button>
     </form>
 </section>
@@ -85,4 +96,6 @@
 @section Scripts {
     <script src="~/js/bubbles.js"></script>
     <script src="~/js/counter.js"></script>
+    <script src="~/js/contact-form.js"></script>
+
 }

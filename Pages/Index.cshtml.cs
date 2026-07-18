@@ -17,7 +17,7 @@ namespace CleaningSite.Pages
         }
 
         [BindProperty]
-        public ContactRequest Request { get; set; } = new();
+        public ContactRequest Input { get; set; } = new();
 
 
         public void OnGet()
@@ -31,11 +31,25 @@ namespace CleaningSite.Pages
                 return Page();
             }
 
-            _db.ContactRequests.Add(Request);
+            _db.ContactRequests.Add(Input);
             _db.SaveChanges();
 
             TempData["Success"] = true;
-            return RedirectToPage();
+            return RedirectToPage(null, null, "contact");
+        }
+
+        public IActionResult OnPostAjax()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Проверьте правильность заполнения полей");
+            }
+
+            _db.ContactRequests.Add(Input);
+            _db.SaveChanges();
+
+            return new JsonResult(new { success = true });
+
         }
     }
 }
